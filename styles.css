@@ -1,0 +1,685 @@
+:root{
+    --primary:rgb(255, 234, 32);
+    --secondary:rgb(253, 237, 95);
+    --tertiary: rgb(255, 242, 130);
+    --tertiary2: rgb(252, 248, 220);
+    --dark: rgb(119, 109, 18);
+    --accent: orangered;
+}
+*{
+    box-sizing: border-box;
+}
+
+
+html, 
+body{
+    /* height: 100%; */
+    padding: 0px;
+    margin: 0px;  
+    font-family: 'Inconsolata', Arial, monospace;
+    background: var(--tertiary2);
+    
+}
+/* Making all heading items to have the same font */
+h1, h1, h3, h4, h5, h6{
+    font-family: Verdana, "Geneva", Tahoma, sans-serif;
+    margin: 5px;
+}
+
+a{
+    color:black;
+    text-decoration: none;
+}
+.clearfix::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.txt-in{
+    padding: .7rem 1rem;
+    display: block;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid var(--dark);
+    outline: none;
+    line-height: 1.5rem;
+}
+
+header{
+    background: var(--primary);
+    height: 66px;
+    position:sticky; /*Makes tab sticky*/
+    top: 0; /*Makes tab stick right from the top*/
+    z-index: 10000; /*allows other page objects to go under the sticky tab*/
+}
+
+/* Styling the LOCC'D logo top left */
+header .logo{
+    float:left;
+    height: inherit;
+    margin-left: 2em;
+}
+header .logo-text a{
+    margin: 9px ;
+    font-family: 'Inconsolata', monospace;
+    text-decoration: none;
+    font-size: larger;
+}
+header .logo-text a:hover{
+    background: var(--dark);
+    transition: 0.5s
+
+}
+
+
+/* Styling the nav bar */
+header ul{
+    float: right;
+    margin: 0px;
+    padding:0px;
+    list-style: none;
+
+}
+header ul li{
+    float: left;
+    position: relative;
+}
+/* "Content" dropdown */
+header ul li ul{
+    position: absolute;
+     top: 66px; /*same length of header. Create a variable if it makes it less confusing */
+     right: 0px;
+     /* width: auto; */
+     width:180px; 
+     display: none;
+
+}
+header ul li:hover ul{
+    display: block; /*unable to click on items under Content when this is enabled. Fixed by line below. Although sizing becomes weird*/
+    /* display: contents; */
+    position: absolute;
+    transition: 0.3s;
+}
+
+header ul li ul li{
+    width: 100%;
+}
+header ul li ul li a{
+    padding: 10px;
+    background:var(--tertiary);
+}
+/* header ul li ul li a:hover{
+    color: aliceblue;
+} */
+
+header ul li a {
+    display: block;
+    font-size: 1.1em;
+    padding: 1em;
+    text-decoration: none;
+    height: 66px;
+
+}
+
+header ul li a:hover{
+    background: var(--dark);
+    transition: 0.5s
+}
+/* Styling the hamburger menu */
+header .ham-menu{
+    display: none;
+}
+
+.page-wrapper{
+    min-height: 100%; 
+    margin-bottom: 50px;
+}
+.page-wrapper a:hover{
+    color: var(--accent);
+}
+
+/* Styling the Welcome banner begins */
+.welcome-banner{
+    margin: 5em;
+    padding: 1em;
+    display: flex;
+    border-radius: 15px;
+    border: 1px solid rgb(9, 9, 11, 0.7) ;    
+    background-color: var(--secondary); 
+  
+  }
+  .welcome-banner .banner-column{
+    margin: 1em;
+    padding: 1em;
+    display: flexbox;
+  }
+  
+  .banner-column p{
+    width: 80%;
+      font-size:x-large;
+      float: left;
+  }
+  
+  .banner-column img{
+    width: 350px;
+    height: 250px;
+    float: right;
+    border-radius: 15px;
+    background-color: var(--primary);
+  }
+  /* Styling the Welcome banner ends*/
+
+
+/* Carousel - responsible for sliding the posts starts*/
+.carousel{
+    /* border: 1px solid red; */
+}
+
+
+.carousel .carousel-title{
+    text-align: center;
+    margin: 30px auto;
+}
+
+.carousel .next{
+    position: absolute;
+    top: 50%;
+    right:30px;
+    color: var(--dark);
+    cursor: pointer;
+}
+.carousel .next:hover{
+    color: var(--accent);
+}
+.carousel .prev{
+    position: absolute;
+    top: 50%;
+    left:30px;
+    color: var(--dark);
+    cursor: pointer;
+}
+.carousel .prev:hover{
+    color: var(--accent);
+}
+
+.carousel .post-wrapper{
+    width: 84%;
+    height: 350px;
+    margin: 0px auto;
+    overflow: hidden;
+    padding: 10px 0px 10px 0px;
+    /* border: 1px dashed red; */
+}
+
+.carousel .post-wrapper .post{
+    width: 300px;
+    height: 330px;
+    margin: 0px 10px;
+    display: inline-block;
+    background: white;
+    justify-items: center;
+    border-radius: 5px;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+
+    /* box-shadow: 0.3rem 1rem 1rem 0 var(--dark); */
+}
+.carousel .post-wrapper .post .post-info{
+    height: 130px;
+    padding:0 5px 0 5px;
+    /* border: 1px solid red; */
+}
+
+.carousel .post-wrapper .post .slider-image{
+    width: 100%;
+    height: 200px;
+}
+/* -----Carousel - responsible for sliding the posts ENDS */
+
+
+
+/*------ Main content section. Styling Starts */
+.content-sxn{
+    width: 90%;
+    margin: 30px auto 30px;
+    /* border: 1px solid red; */
+}
+
+.content-sxn .main-content{
+    width: 70%;
+    float: left;
+    /* border: 1px solid blue; */
+}
+
+.content-sxn .main-content .content{
+    width: 95%;
+    height: 270px;
+    margin: 25px auto;
+    border-radius: 5px;
+    background: white;
+    position: relative;
+}
+
+/*-------- Styling article1 page starts */
+.content-sxn .main-content.single-post{
+    background: white;
+    padding: 20px 50px;
+    font-size: 1.2em;
+}
+.content-sxn .main-content.single-post .post-title{
+    text-align: center;
+    margin-bottom: 40px;
+    /* padding-top: 10px; */
+}
+
+.content-sxn .main-content.single-post .post-img{
+    /* float: center; */
+    border-radius: 5px;
+    width: 70%;
+    height: 350px;
+}
+
+
+.content-sxn .popular {
+    background: white;
+    /* margin-bottom: 10px; */
+
+}
+.content-sxn .popular .content{
+    border-top: 1px solid var(--dark);
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+.content-sxn .popular .content img{
+    height: 80px;
+    width: 80px;
+    float: left;
+    margin-right: 10px;
+}
+
+.content-sxn .sidebar#spacing{
+    padding: 0px 10px;
+}
+
+
+/* -------Styling article 1 page ends */
+
+
+
+/* ------Styling content.html cards section Begins----- */
+
+.content-sxn .card-box .recent-post-title{
+    padding: 1em;
+}
+
+/* Float four columns side by side */
+.content-sxn .card-box .column {
+    float: left;
+    width: 50%;
+    padding: 20px;
+
+   
+  }
+  .content-sxn .card-box .column .card{
+      background: var(--secondary);
+    height: 300px;
+    /* background: red; */
+    /* border: 1px solid blue; */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+    border-radius: 5px;
+    cursor: pointer;
+
+    transition: all .3s ease-in-out;
+
+  }
+  .content-sxn .card-box .column .card:hover{
+    transition: all .3s ease-in-out;
+    transform:scaleX(1.05);
+    /* border: 1px solid blue; */
+    /* box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); */
+    box-shadow: 0 8px 16px 0 var(--dark);
+
+}
+
+.content-sxn .card-box .column .card .card-img{
+      /* height: 100%; */
+    width: 80%;
+    height: 80%;
+    float: center;
+    /* border: 1px solid red; */
+    border-radius: 5px;
+
+
+  }
+
+.content-sxn .card-box .column .card .card-txt{
+    float: center;
+    padding: 20px;
+    /* cursor: pointer; */
+}
+  
+  /* Remove extra left and right margins, due to padding */
+.content-sxn .card-box .row {
+    margin: 0 -5px;     
+   
+}
+  
+  /* Clear floats after the columns */
+.content-sxn .card-box  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsive columns */
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
+  
+  /* Style the counter cards */
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    text-align: center;
+    background-color: #f1f1f1;
+  }
+
+
+
+
+
+
+
+/* .card-box{
+    display: flex; */
+    /* margin: 10px;
+    padding: 10px; */
+    /* flex-direction: column; */
+    /* flex-wrap: wrap; */
+    /* border: 1px solid blue; */
+
+/* } */
+/* .content-sxn .main-content  .card */
+/* .content-sxn .card-box .card { */
+    /* Add shadows to create the "card" effect */
+    /* display: flex;
+    flex: 100%;
+    margin: 20px;
+    margin: 50px 0;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    padding: 2px 16px;
+    width: 70%;
+     */
+    /* flex-direction: row; */
+
+  }
+  /* .content-sxn .main-content .card .card-img */
+  /* .content-sxn  .card-box .card .card-img{
+    background: red;
+    width: 60%;
+    height: 100%; */
+    /* float: left; */
+  }
+  
+  /* On mouse-over, add a deeper shadow */
+  /* .content-sxn .main-content  .card:hover */
+  /* .content-sxn .card-box .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  } */
+
+/*------Styling content.html cards section ends */
+
+  
+
+
+  /* Add some padding inside the card container */
+  .content-sxn .main-content  .container {
+    padding: 2px 16px;
+  }
+
+.content-sxn .main-content .content .content-image{
+    width: 40%;
+    height: 100%;
+    float: left;
+}
+.content-sxn .main-content .content .content-preview{
+    width: 60%;
+    padding: 10px;
+    float: right;
+}
+
+
+.content-sxn .main-content .recent-post-title{
+    margin: 20px;    
+}
+/*------ Main content section below the carousel. Styling Ends  */
+
+
+/* -----Styling the sidebar STARTS*/
+.content-sxn .sidebar{
+    width: 30%;
+    float: left;
+    /* border: 1px dashed green; */
+    height: 500px;
+}
+
+
+.content-sxn .sidebar .sxn{
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.content-sxn .sidebar .sxn .sxn-title{
+    margin: 10px 0px 10px 0px;
+    /* background: red; */
+    padding: 10px;
+
+}
+
+.content-sxn .sidebar .sxn.srch{
+    margin-top: 80px;
+}
+
+.content-sxn .sidebar .sxn.topics{
+    height: 650px;
+}
+
+.content-sxn .sidebar .sxn.topics ul{
+    margin: 0px;
+    padding: 10px;
+    list-style: none;
+    border-top: 1px solid var(--dark);
+}
+
+.content-sxn .sidebar .sxn.topics ul li a{
+    display: block;
+    padding: 25px 0px 25px 0px;
+    border-bottom: 1px solid var(--dark);
+}
+
+.content-sxn #youtube-vid iframe{
+    box-sizing: border-box;
+    width: 100%;
+    height:300px;
+    border-radius: 5px;
+
+    /* background: red; */
+}
+
+/* -----Styling the sidebar ENDS*/
+
+
+
+
+/* -------ABOUTUS PAGE STYLING BEGINS----------- */
+.about-loccd {
+    background: var(--dark);
+    color: whitesmoke;
+    float: left;
+    margin-right: 10px;
+  }
+  
+  .about-loccd .about-loccd-content .about-loccd-section {
+    padding: 40px;
+    box-sizing: border-box;
+  }
+  
+  .about-loccd .about-loccd-content .about .contact {
+    margin-top: 28px;
+  }
+  
+  .about-loccd .about-loccd-content .about .contact i {
+    font-size: 1.2em;
+    margin: 5px auto;
+    display: block;
+    margin-top: 10px;
+  }
+  
+  .about-loccd .about-loccd-content .social {
+    margin-top: 30px;
+  }
+  
+  .about-loccd .about-loccd-content .social a {
+    border: 1px solid rgb(70, 69, 69);
+    font-size: 1.2em;
+    display: inline-block;
+    width: 40px;
+    padding: 5px;
+    text-align: center;
+    margin-right: 5px;
+    border-radius: 5px;
+    transition: all .3s;
+  }
+  
+  .about-loccd .about-loccd-content .social a:hover {
+    color: white;
+    border: 1px solid white;
+    transition: all .3s;
+  }
+  
+  .about-loccd .about-loccd-content .contact-form-div .contact-input {
+    width: 60%;
+    margin: 5px auto 5px;
+    border: none;
+    background: rgb(48, 46, 46);
+    padding: .7rem 1.2rem;
+    font-size: 1.25rem;
+  }
+  
+  
+  
+  .about-loccd .about-loccd-content .contact-form-div #send-msg-btn {
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    transition: 0.3s;
+
+  }
+  .about-loccd .about-loccd-content .contact-form-div #send-msg-btn:hover{
+      background: var(--primary);
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "shadow" effect */
+      transition: 0.3s;  
+  }
+
+/* -------ABOUT US PAGE STYLING ENDS------------ */
+
+
+
+
+
+
+
+/* ------Styling footer begins */
+
+footer{
+    height: 20px;
+    bottom: 0;
+    width: 100%;
+    /* position: fixed; */
+    /* border: 1px solid red; */
+}
+
+/* ------Styling footer ends */
+
+
+
+
+/*----- MEDIA QUERIES----- */
+
+/* nav bar on a small screen begins*/
+@media only screen and (max-width:750px){
+    header{
+        position: relative;
+    }
+    header ul{
+        width: 100%;
+        background: var(--primary);
+        max-height: 0px;
+        overflow: hidden;
+    }
+    .show-ham-menu{
+        max-height: 100em;
+    }
+
+    header ul li{
+        /* float: left; */
+        width: 100%;
+    }
+    header ul li ul {
+        position: static;
+        display: block;
+        width:100%; 
+        background: inherit;
+    }
+    header ul li ul li a{
+        padding: 10px;
+        background: var(--secondary);
+        padding-left: 50px;
+    }
+    header ul li ul li a:hover{
+        background: var(--tertiary2);
+    }
+    header .ham-menu{
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 10px;
+        margin-top: 20px;
+        font-size: 1.9em;
+    }
+    
+    header .logo{
+        float:left;
+        height: inherit;
+        margin-left: 0.5em;
+    }
+    
+}
+/* Responsive nav bar styling ends*/
+
+/* Responsive Sidebar styling begins */
+@media only screen and (max-width: 790px) {
+    .content {
+      margin: 40px auto 50px;
+    }
+    .content .page-content {
+      width: 100%;
+    }
+    .content .sidebar {
+      width: 100%;
+      margin-top: 40px;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+}
+/* Responsive Sidebar styling ends */
