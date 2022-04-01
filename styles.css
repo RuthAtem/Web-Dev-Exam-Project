@@ -131,6 +131,9 @@ header .ham-menu{
     display: none;
 }
 
+
+
+
 .page-wrapper{
     min-height: 100%; 
     margin-bottom: 50px;
@@ -242,7 +245,7 @@ header .ham-menu{
 .content-sxn{
     width: 90%;
     margin: 30px auto 30px;
-    /* border: 1px solid red; */
+    border: 1px solid red;
 }
 
 .content-sxn .main-content{
@@ -354,9 +357,10 @@ header .ham-menu{
   }
 
 .content-sxn .card-box .column .card .card-txt{
-    float: center;
-    padding: 20px;
+    /* float: center; */
+    /* padding: 20px; */
     /* cursor: pointer; */
+    display: block;
 }
   
   /* Remove extra left and right margins, due to padding */
@@ -379,6 +383,7 @@ header .ham-menu{
       display: block;
       margin-bottom: 20px;
     }
+    
   }
   
   /* Style the counter cards */
@@ -386,7 +391,7 @@ header .ham-menu{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     padding: 16px;
     text-align: center;
-    background-color: #f1f1f1;
+    border: 3px solid red;
   }
 
 
@@ -418,14 +423,14 @@ header .ham-menu{
      */
     /* flex-direction: row; */
 
-  }
+  /* } */
   /* .content-sxn .main-content .card .card-img */
   /* .content-sxn  .card-box .card .card-img{
     background: red;
     width: 60%;
     height: 100%; */
     /* float: left; */
-  }
+  /* } */
   
   /* On mouse-over, add a deeper shadow */
   /* .content-sxn .main-content  .card:hover */
@@ -465,8 +470,8 @@ header .ham-menu{
 .content-sxn .sidebar{
     width: 30%;
     float: left;
-    /* border: 1px dashed green; */
-    height: 500px;
+    border: 1px dashed green;
+    /* height: 500px; */
 }
 
 
@@ -683,3 +688,70 @@ footer{
     }
 }
 /* Responsive Sidebar styling ends */
+
+/* Styling the container and defining widths for responsiveness. Begins */
+    /* -----You have to cut and paste all other media queries into this section so there's defined css for specific screen sizes----- */
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
+  /* Small screen */
+  @media (max-width: 576px) {
+    .container {
+      max-width: 540px;
+    }
+    
+  }
+  
+    /* Medium screen */
+  @media (max-width: 768px) {
+    .container {
+      max-width: 720px;
+    }
+   
+  }
+  
+    /* Large screen */
+  @media (max-width: 992px) {
+    .container {
+      max-width: 960px;
+    }
+
+    /* recently posted articles section */
+    .content-sxn{
+        width: 100%;
+        /* border: 1px solid red; */
+    }
+    .content-sxn .main-content .content{
+        width: 100%;
+    }
+    .content-sxn .main-content{
+        width: 100%;
+        float: left;
+        padding: 10px;
+        /* border: 1px solid blue; */
+    }
+    
+    .content-sxn .sidebar{
+        width: 100%;
+        padding: 10px;
+    }
+    .content-sxn .sidebar .sxn.srch{
+        margin-top: 30px;
+    }
+    
+  }
+ 
+    /* Extra large screen */
+  @media (max-width: 1200px) {
+    .container {
+      max-width: 1140px;
+    }
+  }
+
+/* Styling container ends */

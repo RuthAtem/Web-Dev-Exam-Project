@@ -3,6 +3,7 @@ $(document).ready(function(){
     $('.ham-menu').on('click', function() {
         $('.nav').toggleClass('show-ham-menu');
         $('.nav ul').toggleClass('show-ham-menu');
+        $('.nav ul li').toggleClass('show-ham-menu');
 
     });
 });
